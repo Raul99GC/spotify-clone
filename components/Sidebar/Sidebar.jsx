@@ -1,7 +1,7 @@
 import React from 'react'
 import Image from 'next/image'
 import Link from 'next/link'
-import spotifyImage from '../public/spotify-logo-img.png'
+import spotifyImage from '../../public/spotify-logo-img.png'
 
 import { AiFillHome, AiFillHeart } from 'react-icons/ai'
 import { BsSearch } from 'react-icons/bs'
