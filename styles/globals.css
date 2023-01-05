@@ -1,3 +1,25 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+.menu-animation-enter {
+    opacity: 0;
+    transform: translateX(100%);
+}
+
+.menu-animation-enter-active {
+    opacity: 1;
+    transform: translateX(0);
+    transition: opacity 300ms, transform 300ms;
+}
+
+.menu-animation-exit {
+    opacity: 1;
+    transform: translateX(0);
+}
+
+.menu-animation-exit-active {
+    opacity: 0;
+    transform: translateX(100%);
+    transition: opacity 300ms, transform 300ms;
+}
