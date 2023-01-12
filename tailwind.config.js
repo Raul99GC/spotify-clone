@@ -9,6 +9,7 @@ module.exports = {
       colors: {
         spoify: {
           green: '#1DB954 ',
+          lightGreen: '#1ed760',
           black: '#000000',
           white: '#FFFFFF',
           darkestGray: '#121212',
