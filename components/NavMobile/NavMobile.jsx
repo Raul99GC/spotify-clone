@@ -18,7 +18,7 @@ const NavMobile = ({ handleButton, statusButton }) => {
         nodeRef={nodeRef}
       >
 
-        <div className={'flex w-screen h-screen fixed top-0 left-0 z-10 bg-spoify-black overflow-hidden menu-bg-enter titles'}>
+        <div ref={nodeRef} className={'flex w-screen h-screen fixed top-0 left-0 z-10 bg-spoify-black overflow-hidden menu-bg-enter titles'}>
           <button className='w-7 aspect-square bg-spoify-black absolute right-4 top-6' onClick={handleButton}>
             <AiOutlineClose
               className='text-spoify-white w-full h-full'
