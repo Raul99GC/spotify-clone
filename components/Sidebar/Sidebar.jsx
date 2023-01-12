@@ -18,6 +18,7 @@ const Sidebar = () => {
             width={130}
             height={40}
             className='mb-2'
+            priority= {true}
           />
         </Link>
         <nav className="">
