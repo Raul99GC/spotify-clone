@@ -12,11 +12,9 @@ export async function middleware (req, res) {
 
   const accesTokenKey = 'spotify_access_token'
   const refreshTokenKey = 'spotify_refresh_token'
-  // const timeStampKey = 'spotify_token_timestamp'
 
   const localRefreshToken = req.cookies.get(refreshTokenKey)
   const localAccessToken = req.cookies.get(accesTokenKey)
-  // const localTimeStamp = req.cookies.get(timeStampKey)
 
   if ((localRefreshToken === undefined || localAccessToken === undefined) && accesToken && refreshToken) {
     const cookies = [
