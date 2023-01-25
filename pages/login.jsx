@@ -2,7 +2,7 @@ import React from 'react'
 import Image from 'next/image'
 import Link from 'next/link'
 import logoImage from '../public/spotify-logo-img.png'
-import cookie from 'cookie'
+// import cookie from 'cookie'
 
 const Login = () => {
   return (
@@ -21,24 +21,6 @@ const Login = () => {
       </Link>
     </div>
   )
-}
-
-export async function getServerSideProps (context) {
-  const cookies = [
-    cookie.serialize('spotify_access_token', '', {
-      maxAge: -1 // negative value to delete the cookie
-    }),
-    cookie.serialize('spotify_refresh_token', '', {
-      maxAge: -1 // negative value to delete the cookie
-    })
-  ]
-  context.res.setHeader('Set-Cookie', cookies)
-
-  return {
-    props: {
-
-    }
-  }
 }
 
 export default Login
