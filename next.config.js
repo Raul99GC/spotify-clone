@@ -7,7 +7,13 @@ const nextConfig = {
         protocol: 'https',
         hostname: '**.scdn.co',
         port: '',
-        pathname: '/image/**'
+        pathname: '/**'
+      },
+      {
+        protocol: 'https',
+        hostname: '**.fbsbx.com',
+        port: '',
+        pathname: '/platform/**'
       }
     ]
   }
