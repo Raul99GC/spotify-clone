@@ -9,7 +9,7 @@ const ButtonNavMov = ({ handleButton, statusButton }) => {
 
       <button onClick={handleButton} className=' flex justify-end items-center p-3'>
         <AiOutlineSetting
-          className='text-2xl font-bold transla xl:hidden'
+          className='text-2xl font-bold transla md:hidden'
         />
       </button>
 
