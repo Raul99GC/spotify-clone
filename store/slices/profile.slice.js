@@ -1,16 +1,27 @@
 import { createSlice } from '@reduxjs/toolkit'
-// import useSpotify from '../../hooks/useSpotify'
+
+const initialState = {
+  isLoading: true,
+  profile: {},
+  error: null
+}
 
 export const profileSlice = createSlice({
   name: 'profile',
-  initialState: 'Raul Cordoba',
+  initialState,
   reducers: {
     setProfile: (state, action) => {
+      state.profile = action.payload
+      state.isLoading = false
+      state.error = null
+    },
+    setIsProfileLoading: (state, action) => {
       return action.payload
     }
+
   }
 })
 
-export const { setProfile } = profileSlice.actions
+export const { setProfile, profileIsLoading } = profileSlice.actions
 
 export default profileSlice.reducer
