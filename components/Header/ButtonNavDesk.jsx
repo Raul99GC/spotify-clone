@@ -10,8 +10,8 @@ export const ButtonNavDesk = ({ handleButton, statusButton }) => {
     <>
       {isLoading && null}
       {!isLoading &&
-        <button onClick={handleButton} className=' justify-end items-center p-3 hidden xl:flex'>
-          <div className="bg-spoify-black w-auto min-w-[90px] h-8 rounded-full p-[2px] gap-2 flex">
+        <button onClick={handleButton} className=' justify-end items-center p-3 hidden md:flex'>
+          <div className="bg-spoify-black w-auto  h-8 rounded-full p-[2px] gap-2 flex">
             <div className="w-7 h-full overflow-hidden rounded-full">
               <Image
                 src={profile?.images[0].url}
@@ -21,13 +21,13 @@ export const ButtonNavDesk = ({ handleButton, statusButton }) => {
                 alt={'image profile of '}
               />
             </div>
-            <span className='text-xs font-bold m-auto'>{profile.display_name}</span>
+            <span className='text-xs font-bold m-auto md:hidden lg:flex'>{profile.display_name}</span>
             {!statusButton
               ? <RxTriangleUp
-                className={'text-2xl h-full'}
+                className={'text-2xl h-full md:hidden lg:flex'}
               />
               : <RxTriangleDown
-                className={'text-2xl h-full'}
+                className={'text-2xl h-full md:hidden lg:flex'}
               />}
           </div>
         </button>
