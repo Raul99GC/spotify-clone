@@ -1,12 +1,13 @@
 import { configureStore } from '@reduxjs/toolkit'
 import thunk from 'redux-thunk'
 
-import { profile, accessToken } from './slices'
+import { profile, accessToken, isMobile } from './slices'
 
 export default configureStore({
   reducer: {
     profile,
-    accessToken
+    accessToken,
+    isMobile
   },
   middleware: [thunk]
 })
