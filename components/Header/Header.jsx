@@ -1,43 +1,81 @@
-import React, { useState } from 'react'
-import Image from 'next/image'
-import Link from 'next/link'
-import spotifyImage from '../../public/spotify-logo-img.png'
+import React, { useState, useEffect } from 'react'
+import axios from 'axios'
 
-import { AiOutlineSetting } from 'react-icons/ai'
+import { useDispatch, useSelector } from 'react-redux'
+import { setToken } from '../../store/slices/accessToken.slice'
+import { setProfile } from '../../store/slices/profile.slice'
+import { useRouter } from 'next/router'
+
+import { getCurrentUser } from '../../spotify/spotifyLinks'
+
 import NavMobile from '../NavMobile/NavMobile'
+import NavDesktop from '../NavDesktop/NavDesktop'
+import ButtonNavMov from './ButtonNavMov'
+import { refreshToken } from '../../spotify/spotifyTokens'
+import { ButtonNavDesk } from './ButtonNavDesk'
 
 const Header = () => {
+  const router = useRouter()
+  const isMain = router.asPath
+  const dispatch = useDispatch()
   const [statusButton, setStatusButton] = useState(false)
+  const { dataToken } = useSelector(state => state.accessToken)
+  const { timeStamp, token } = dataToken
 
   const handleButton = () => {
     setStatusButton(!statusButton)
-    console.log(statusButton)
   }
 
-  return (
-    <div className='w-full h-14 bg-spoify-gray top-0 left-0 flex justify-center xl:ml-96 xl:w-[calc(100%-384px)] xl:h-16 xl:fixed'>
-      <div className="h-full w-[90%] flex justify-between items-center">
-        <Link
-          href={'#'}
-        >
-          <Image
-            src={spotifyImage}
-            className='w-[105px] min-w-[105px] h-[34px]'
-            priority={true}
-            alt='spotify logo'
-          />
-        </Link>
-        <button className=' flex justify-end items-center p-3'
-        >
-          <AiOutlineSetting
-            className='text-2xl font-bold transla'
-            onClick={handleButton}
-          />
-        </button>
+  const getToken = async () => {
+    try {
+      const response = await axios('http://localhost:3000/api/getToken')
+      const data = response.data
+      return data
+    } catch (err) {
+      console.log(err)
+      return 'error'
+    }
+  }
 
+  const setProf = () => {
+    if ((Date.now() - (3600 * 1000) > timeStamp) || timeStamp === undefined) {
+      console.log('aqui')
+      refreshToken()
+        .then(res => {
+          console.log(res)
+        })
+      // router.reload()
+    }
+    getCurrentUser(token)
+      .then(res => {
+        dispatch(setProfile(res.data))
+      })
+  }
+
+  useEffect(() => {
+    getToken()
+      .then((res) => {
+        dispatch(setToken(res))
+      })
+  }, [])
+
+  useEffect(() => {
+    if (token && token !== undefined) {
+      setProf()
+    }
+  }, [token])
+
+  return (
+    <header className='fixed w-full h-14 top-0 left-0 flex justify-center xl:ml-96 xl:w-[calc(100%-384px)] xl:h-16 xl:fixed'>
+
+      <div className="h-full w-full px-3 flex justify-end items-center">
+        {isMain === '/' && <ButtonNavMov handleButton={handleButton} statusButton={statusButton} />}
+        <ButtonNavDesk handleButton={handleButton} statusButton={statusButton} />
       </div>
+
       <NavMobile handleButton={handleButton} statusButton={statusButton} />
-    </div>
+      {statusButton && <NavDesktop handleButton={handleButton} />}
+    </header>
   )
 }
 
