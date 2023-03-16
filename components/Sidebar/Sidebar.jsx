@@ -22,17 +22,17 @@ const Sidebar = () => {
         <nav className="">
           <ul className='text-sm'>
             <li className='group flex items-center px-2 min-h-[40px] hover:bg-spoify-gray transition-colors'>
-              <Link href={'#'} className='flex items-center gap-8 font-bold px-4 text-spoify-lighGray group-hover:text-spoify-white'>
+              <Link href={'#'} className='flex items-center gap-4 font-bold px-4 text-spoify-lighGray group-hover:text-spoify-white'>
                 <AiFillHome className='text-2xl' /> <span className='capitalize'>inicio</span>
               </Link>
             </li>
             <li className='group flex items-center px-2 min-h-[40px] hover:bg-spoify-gray transition-colors'>
-              <Link href={'#'} className='flex items-center gap-8 font-bold px-4 text-spoify-lighGray group-hover:text-spoify-white'>
+              <Link href={'#'} className='flex items-center gap-4 font-bold px-4 text-spoify-lighGray group-hover:text-spoify-white'>
                 <BsSearch className='text-2xl' /> <span className='capitalize'>Buscar</span>
               </Link>
             </li>
             <li className='group flex items-center px-2 min-h-[40px] hover:bg-spoify-gray transition-colors'>
-              <Link href={'#'} className='flex items-center gap-8 font-bold px-4 text-spoify-lighGray group-hover:text-spoify-white'>
+              <Link href={'#'} className='flex items-center gap-4 font-bold px-4 text-spoify-lighGray group-hover:text-spoify-white'>
                 <BiLibrary className='text-2xl' /> <span className='capitalize'>tu biblioteca</span>
               </Link>
             </li>
@@ -42,7 +42,7 @@ const Sidebar = () => {
         <div className="mt-6 text-sm capitalize">
 
           <div className="group w-full min-w-[40px] hover:bg-spoify-gray transition-colors duration-300" >
-            <div className="px-6 py-2.5 flex gap-8">
+            <div className="px-6 py-2.5 flex gap-4">
               <div className="bg-spoify-lighGray w-6 h-6 flex items-center justify-center rounded-sm group-hover:bg-spoify-white">
                 <BiPlus
                   className='w-auto text-spoify-black'
@@ -53,7 +53,7 @@ const Sidebar = () => {
           </div>
 
           <div className="group w-full min-w-[40px] hover:bg-spoify-gray transition-colors duration-300" >
-            <div className="px-6 py-2.5 flex gap-8">
+            <div className="px-6 py-2.5 flex gap-4">
               <div className="bg-gradient-to-tl from-[#3010A3] to-[#8BA099] w-6 h-6 flex items-center justify-center rounded-sm group-hover:bg-spoify-white">
                 <AiFillHeart
                   className='w-4 text-spoify-lighGray group-hover:text-spoify-white'
