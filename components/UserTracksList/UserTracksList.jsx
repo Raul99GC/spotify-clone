@@ -3,16 +3,14 @@ import PropTypes from 'prop-types'
 import Link from 'next/link'
 import Image from 'next/image'
 import { BsFillSuitHeartFill, BsThreeDots } from 'react-icons/bs'
-import { miliToSeconds } from '../../utils/miliToMinutes'
+import { milliToSeconds } from '../../utils/milliToMinutes'
 
 export const UserTracksList = ({ trackInf }) => {
-  console.log(trackInf)
-
   const trackName = trackInf.name
   const trackImage = trackInf?.album.images[2].url
   const trackAlbum = trackInf.album.name
   const trackArtist = trackInf.artists[0].name
-  const timeTrack = miliToSeconds(trackInf.duration_ms)
+  const timeTrack = milliToSeconds(trackInf.duration_ms)
 
   return (
     <ul className='w-full'>
