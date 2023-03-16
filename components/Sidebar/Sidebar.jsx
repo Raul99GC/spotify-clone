@@ -9,15 +9,13 @@ import { BiLibrary, BiPlus } from 'react-icons/bi'
 
 const Sidebar = () => {
   return (
-    <div className='bg-spoify-black fixed top-0 left-0 w-96 h-full flex-col justify-between hidden xl:flex'>
+    <div className='bg-spoify-black fixed top-0 left-0 w-64 h-full flex-col justify-between hidden  md:flex xl:w-96 '>
       <div className="pt-6">
-        <Link href={'#'} className="hidden px-6 mb-4 xl:flex">
+        <Link href={'/'} className="hidden px-6 mb-4 xl:flex">
           <Image
             src={spotifyImage}
             alt='spotify Image'
-            width={130}
-            height={40}
-            className='mb-2'
+            className='mb-2 w-[130px] h-auto'
             priority= {true}
           />
         </Link>
