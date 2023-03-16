@@ -23,11 +23,11 @@ export const getCurrentUser = (accestoken) => axios.get(`${URL}/me`, { headers: 
 export const getUserProfile = (accestoken, userId) => axios.get(`${URL}/users/${userId}`, { headers: headers(accestoken) })
 
 /*
-  * Get User's Playlists
-  ? Get a list of the playlists owned or followed by a Spotify user.
-  ** https://developer.spotify.com/documentation/web-api/reference/#/operations/get-list-users-playlists
+  * Get Current User's Playlists
+  ? Get a list of the playlists owned or followed by the current Spotify user.
+  ** https://developer.spotify.com/documentation/web-api/reference/#/operations/get-a-list-of-current-users-playlists
 */
-export const getCurrentUserplaylist = (accestoken, userId) => axios.get(`${URL}/me`, { headers: headers(accestoken) })
+export const getCurrentUserplaylist = (accestoken, userId) => axios.get(`${URL}/me/playlists`, { headers: headers(accestoken) })
 
 /*
   * Get User's Playlists
@@ -44,8 +44,8 @@ export const getUserplaylist = (accestoken, userId) => axios.get(`${URL}/users/$
 export const getFollowersArtirst = (accestoken, userId) => axios.get(`${URL}/users/${userId}/playlists?limit=50`, { headers: headers(accestoken) })
 
 /*
-  * Get User's artist Top Items
-  ? Get the current user's top artists based on calculated affinity.
+  * Get Followed Artists
+  ? Get the current user's followed artists.
   ** https://developer.spotify.com/documentation/web-api/reference/#/operations/get-list-users-playlists
 */
 export const getUserstopArtist = (accestoken, limit = 50) => axios.get(`${URL}/me/top/artists/?limit=${limit}&time_range=short_term`, { headers: headers(accestoken) })
@@ -56,10 +56,3 @@ export const getUserstopArtist = (accestoken, limit = 50) => axios.get(`${URL}/m
   ** https://developer.spotify.com/documentation/web-api/reference/#/operations/get-list-users-playlists
 */
 export const getUserstopTracks = (accestoken, limit = 50) => axios.get(`${URL}/me/top/tracks/?limit=${limit}`, { headers: headers(accestoken) })
-
-/*
-  * Get User's artist Top Items
-  ? Get the current user's top tracks based on calculated affinity.
-  ** https://developer.spotify.com/documentation/web-api/reference/#/operations/get-list-users-playlists
-*/
-export const getTrack = (accestoken, id) => axios.get(`${URL}/tracks/0HqZX76SFLDz2aW8aiqi7G`, { headers: headers(accestoken) })
