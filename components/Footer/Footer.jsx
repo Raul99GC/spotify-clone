@@ -51,9 +51,9 @@ export const Footer = () => {
             </div>
           </div>
         </div>
-        <hr className='container mx-auto border-t border-neutral-600' />
+        <hr className='container mx-auto border-t border-neutral-600 pb-6' />
 
-        <div className="w-full flex ">
+        <div className="w-full flex p-4">
           <div className="w-[60%] flex flex-wrap gap-4">
             <Link href={'#'}>
               <span className='text-sm text-spoify-lighGray hover:text-spoify-white'>Legal</span>
