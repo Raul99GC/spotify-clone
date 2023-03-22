@@ -9,7 +9,7 @@ const NavDesktop = () => {
   const liStyles = 'h-10 flex items-center w-full hover:bg-spoify-hoverGray rounded-sm pl-3 pr-2'
 
   return (
-    <nav className=' justify-center bg-spoify-gray h-auto w-48 rounded-sm absolute top-[115%] right-8 hidden xl:flex'>
+    <nav className=' justify-center bg-spoify-gray h-auto w-48 rounded-sm absolute top-[115%] right-8 hidden md:flex'>
       <ul className='flex flex-col items-center w-[95%] text-sm'>
         <li className={`${liStyles} mt-1`}>
           <Link href={'#'} className={'w-full flex justify-between'}>
