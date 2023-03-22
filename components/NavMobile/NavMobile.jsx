@@ -13,7 +13,7 @@ const NavMobile = ({ handleButton, statusButton }) => {
   const nodeRef = useRef(null)
 
   return (
-    <div className='xl:hidden'>
+    <div className='md:hidden'>
       <CSSTransition
         in={statusButton}
         timeout={300}
