@@ -31,7 +31,6 @@ export const ArtistCard = ({ artist }) => {
           <span className='text-spoify-lighGray'>Artista</span>
         </div>
       </Link>
-
     </li>
   )
 }
